@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-base: #181512;
+  --color-ink-surface: #221E1A;
+  --color-surface-lowest: #100e0b;
+  --color-surface-low: #1e1b18;
+  --color-surface-container: #221f1c;
+  --color-surface-high: #2d2926;
+  --color-surface-variant: #383430;
+  --color-parchment: #FAF3EB;
+  --color-parchment-alt: #F1E5D6;
+  --color-terracotta-stroke: #B85A3A;
+  --color-terracotta-glow: #D9724E;
+  --color-primary: #ffb59c;
+  --color-primary-container: #db7450;
+  --color-on-primary-container: #511500;
+  --color-secondary: #ffb59d;
+  --color-tertiary: #ccc6be;
+  --color-tertiary-fixed-dim: #ccc6be;
+  --color-on-tertiary-fixed-variant: #4a4641;
+  --color-outline-variant: #56423c;
+  --color-text-light: #F7EFE6;
+  --color-text-dark: #1E1916;
+
+  --font-serif-editorial: "EB Garamond", Georgia, serif;
+  --font-sans-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono-label: "Space Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans-body);
+    background-color: #161310;
+    color: #e9e1dc;
+  }
+}
+
+.font-editorial {
+  font-family: var(--font-serif-editorial);
+}
+
+.font-body {
+  font-family: var(--font-sans-body);
+}
+
+.font-mono-stamp {
+  font-family: var(--font-mono-label);
+}
+
+.comic-shadow {
+  box-shadow: 6px 6px 0px #B85A3A;
+}
+
+.comic-shadow-sm {
+  box-shadow: 4px 4px 0px #B85A3A;
+}
+
+.comic-shadow-xs {
+  box-shadow: 2px 2px 0px #B85A3A;
+}
+
+.comic-shadow-dark {
+  box-shadow: 4px 4px 0px #181512;
+}
+
+.comic-interactive {
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.comic-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #D9724E;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .comic-interactive,
+  .animate-pulse {
+    transition: none !important;
+    animation: none !important;
+  }
+}
